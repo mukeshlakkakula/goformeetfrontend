@@ -1,18 +1,20 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { getAllCouriers } from "@/app/Api/tracking.js";
-import Link from "next/link";
+
 import Cookies from "js-cookie";
 
 function ShipmentsPage() {
   const [shipments, setShipments] = useState([]);
-  const token = Cookies.get("jwt_token"); // Get JWT token from cookies
+  const token = Cookies.get("jwt_token");
   const emailData = Cookies.get("user");
-  const user = emailData ? JSON.parse(emailData) : null;
+  const user = JSON.parse(emailData);
   useEffect(() => {
     async function getShipments() {
       if (!token) {
         console.error("No token found, redirecting to login...");
-        window.location.href = "/auth/login"; // Redirect if no token
+        window.location.href = "/auth/login";
         return;
       }
 
