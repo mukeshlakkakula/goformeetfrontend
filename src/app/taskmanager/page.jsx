@@ -12,7 +12,7 @@ const TaskManager = () => {
   const [tasksPerPage] = useState(5);
   const [showModal, setShowModal] = useState(false);
   const [editingTask, setEditingTask] = useState(null);
-  const [filter, setFilter] = useState(""); // Filter by status
+  const [filter, setFilter] = useState("");
   const [taskData, setTaskData] = useState({
     title: "",
     description: "",
@@ -99,7 +99,6 @@ const TaskManager = () => {
       <div className="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-lg">
         <h1 className="text-2xl font-bold text-center mb-4">Task Manager</h1>
 
-        {/* Add Task Button */}
         <div className="flex justify-between items-center mb-4">
           <button
             className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
@@ -108,7 +107,6 @@ const TaskManager = () => {
             + Add Task
           </button>
 
-          {/* Status Filter */}
           <select
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
@@ -121,7 +119,6 @@ const TaskManager = () => {
           </select>
         </div>
 
-        {/* Task List */}
         {currentTasks.length === 0 ? (
           "No Task is added"
         ) : (
@@ -158,7 +155,6 @@ const TaskManager = () => {
           </ul>
         )}
 
-        {/* Pagination Controls */}
         <div className="flex justify-center mt-4 space-x-2">
           {Array.from(
             { length: Math.ceil(filteredTasks.length / tasksPerPage) },
@@ -178,7 +174,6 @@ const TaskManager = () => {
           )}
         </div>
 
-        {/* Task Modal */}
         {showModal && (
           <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">

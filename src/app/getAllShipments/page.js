@@ -32,7 +32,7 @@ function ShipmentsPage() {
       }
     }
     getShipments();
-  }, [token]); // Ensure token is available
+  }, [token]);
 
   return (
     <>

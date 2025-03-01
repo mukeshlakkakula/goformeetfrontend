@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-import Cookies from "js-cookie"; // Import js-cookie
+import Cookies from "js-cookie";
 import Navbar from "@/components/Navbar";
 
 const Login = () => {

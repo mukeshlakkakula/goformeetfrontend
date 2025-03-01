@@ -23,17 +23,14 @@ const Navbar = () => {
   return (
     <nav className="bg-blue-600 p-4 shadow-md w-full">
       <div className="container mx-auto flex justify-between items-center">
-        {/* Logo */}
         <Link href="/" className="text-white text-xl font-bold">
           GoForMeet
         </Link>
 
-        {/* Mobile Menu Button */}
         <button
           className="text-white md:hidden block focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {/* Hamburger Icon */}
           <svg
             className="w-6 h-6"
             fill="none"
@@ -59,7 +56,6 @@ const Navbar = () => {
           </svg>
         </button>
 
-        {/* Navigation Links (Desktop & Mobile) */}
         <div
           className={`absolute md:static top-16 left-0 w-full md:w-auto bg-blue-600 md:bg-transparent p-4 md:p-0 md:flex items-center space-x-4 transition-all ${
             isOpen ? "block" : "hidden md:flex"

@@ -6,7 +6,7 @@ import { trackShipment } from "@/app/Api/tracking";
 export default function ShipmentDetails() {
   const { trackingNumber } = useParams();
   const [shipment, setShipment] = useState(null);
-  const token = ""; // Replace with actual token
+  const token = "";
   useEffect(() => {
     async function fetchShipment() {
       const data = await trackShipment(trackingNumber, token);

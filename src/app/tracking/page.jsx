@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 import Navbar from "@/components/Navbar";
 
 export default function ShipmentsPage() {
-  const token = Cookies.get("jwt_token"); // Replace with actual token
+  const token = Cookies.get("jwt_token");
   console.log("jwt", token);
 
   const dummyCouriers = [
