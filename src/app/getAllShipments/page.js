@@ -9,7 +9,9 @@ function ShipmentsPage() {
   const [shipments, setShipments] = useState([]);
   const token = Cookies.get("jwt_token");
   const emailData = Cookies.get("user");
-  const user = JSON.parse(emailData);
+
+  const user = emailData ? JSON.parse(emailData) : null;
+
   useEffect(() => {
     async function getShipments() {
       if (!token) {
@@ -21,8 +23,9 @@ function ShipmentsPage() {
       try {
         const data = await getAllCouriers(token);
         const filteredShipments = data.couriers.filter(
-          (courier) => courier.user.email === user.email
+          (courier) => user && courier.user.email === user.email
         );
+
         setShipments(filteredShipments);
       } catch (error) {
         console.error("Error fetching shipments:", error);
@@ -60,9 +63,7 @@ function ShipmentsPage() {
               </li>
             ))
           ) : (
-            <p className="text-gray-500">
-              No shipments found for this {user.email}.
-            </p>
+            <p className="text-gray-500">No shipments found for this .</p>
           )}
         </ul>
       </div>

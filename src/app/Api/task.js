@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 
-const BASE_URL = "http://localhost:5000/api/tasks";
+const BASE_URL = "https://goformeetbackend-2.onrender.com/api/tasks";
 const token = Cookies.get("jwt_token");
 export const fetchTasks = async () => {
   // Get token from cookies
